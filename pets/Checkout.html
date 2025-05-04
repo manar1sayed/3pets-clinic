@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Pets or More Clinic - Checkout</title>
+  <link rel="stylesheet" href="FILE.css" />
+  <link rel="icon" href="Logo.png">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Logo.png" alt="3 Pets or More Clinic Logo" />
+      <h2>Appointment Summary</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="checkout-summary">
+    <h3>Appointment Summary</h3>
+    <div class="summary-card">
+      <div class="summary-item">
+        <span class="label">Owner's Name:</span>
+        <span class="value" id="owner-name"></span>
+      </div>
+      <div class="summary-item">
+        <span class="label">Pet Type:</span>
+        <span class="value" id="pet-type"></span>
+      </div>
+      <div class="summary-item">
+        <span class="label">Service:</span>
+        <span class="value" id="service"></span>
+      </div>
+      <div class="summary-item">
+        <span class="label">Preferred Date:</span>
+        <span class="value" id="appointment-date"></span>
+      </div>
+      <div class="summary-item total">
+        <span class="label">Total:</span>
+        <span class="value" id="total-price"></span>
+      </div>
+    </div>
+
+    <div class="payment-section">
+
+      <h3>Payment Details</h3>
+      <form action="thank_you.html" method="POST">
+        <label for="card-number">Card Number</label>
+        <input type="text" id="card-number" name="card-number" placeholder="1234 5678 9876 5432" required>
+
+        <label for="expiry-date">Expiry Date</label>
+        <input type="month" id="expiry-date" name="expiry-date" required>
+
+        <label for="cvv">CVV</label>
+        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+        <button type="submit">Confirm Payment</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 3 Pets or More Clinic. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+ 
+    document.getElementById("owner-name").textContent = params.get("name");
+    document.getElementById("pet-type").textContent = params.get("pet-type");
+    document.getElementById("service").textContent = params.get("service");
+    document.getElementById("appointment-date").textContent = params.get("date");
+
+  
+    const prices = {
+      "General Checkup": 250,
+      "Vaccination": 350,
+      "Surgery": 2000,
+      "Grooming": 500
+    };
+    const service = params.get("service");
+    const price = prices[service] || 0;
+    document.getElementById("total-price").textContent = "EGP" + price;
+  </script>
+</body>
+</html>

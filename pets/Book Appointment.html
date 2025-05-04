@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 Pets or More Clinic - Book Appointment</title>
+  <link rel="stylesheet" href="FILE.css" />
+  <link rel="icon" href="Logo.png">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="Logo.png" alt="3 Pets or More Clinic Logo" />
+      <h2>Book an Appointment</h2>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Services.html">Services</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h2>A Step Away from Your Pet's Happiness</h2>
+      <form action="Checkout.html" method="GET">
+        <label for="name">Owner's Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="pet-type">Pet Type:</label>
+        <input type="text" id="pet-type" name="pet-type" required>
+
+        <label for="service">Service:</label>
+        <select id="service" name="service" required>
+          <option value="General Checkup">General Checkup</option>
+          <option value="Vaccination">Vaccination</option>
+          <option value="Surgery">Surgery</option>
+          <option value="Grooming">Grooming</option>
+        </select>
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+    <div class="hero-image">
+      <img src="dog.jpeg" alt="Happy pets with veterinarian" />
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 3 Pets or More Clinic. All rights reserved.</p>
+  </footer>
+</body>
+</html>
